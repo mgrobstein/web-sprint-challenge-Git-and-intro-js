@@ -332,11 +332,12 @@ For example artistInfo(artists, 'Frida Kahlo') will return:
 */
 function artistInfo(array, artistsName){
   let nameAndBio = [];
-  const isArtist = (element) => element === artistsName;
-  let indexOfArtist = array.findIndex(isArtist);
-  nameAndBio.push(array[indexOfArtist].bio);
-  console.log(indexOfArtist)
-  return nameAndBio;
+  for (let i =0; i<array.length; i++){
+    if (array[i].name === artistsName){
+      nameAndBio.push(array[i].bio);
+      return nameAndBio;
+    }
+  }
 }
 
 
@@ -350,8 +351,15 @@ Use artistByCountry to do the following:
 For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya']
 */
 
-function artistByCountry(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistByCountry(array,country){
+let artistsFromCountry = [];
+for (let j = 0; j < array.length; j++){
+  if( array[j].nationality === country){
+    artistsFromCountry.push(array[j].nationality)
+    return artistsFromCountry;
+  }
+}
+artistsFromCountry.pop();
 }
 
 
