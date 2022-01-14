@@ -355,11 +355,10 @@ function artistByCountry(array,country){
 let artistsFromCountry = [];
 for (let j = 0; j < array.length; j++){
   if( array[j].nationality === country){
-    artistsFromCountry.push(array[j].nationality)
-    return artistsFromCountry;
+    artistsFromCountry.push(array[j].name)
   }
 }
-artistsFromCountry.pop();
+return artistsFromCountry;
 }
 
 
